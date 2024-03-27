@@ -15,16 +15,16 @@ Node queue[100 * 100];
 
 int bfs(int** maze, int n, int m) {
 	int front = 0, rear = 0;
-  //Node* queue = (Node*)malloc(sizeof(Node) * n * m);
+	//Node* queue = (Node*)malloc(sizeof(Node) * n * m);
 	queue[rear++] = (Node) { 0, 0, 1 };
 
 	while (front < rear) {
 		Node current = queue[front++];
 
 		if (current.x == n - 1 && current.y == m - 1) {
-      //free(queue);
-      return current.distance;
-    }
+			//free(queue);
+			return current.distance;
+		}
 
 		for (int i = 0; i < 4; i++) {
 			int nx = current.x + dx[i];
@@ -36,7 +36,7 @@ int bfs(int** maze, int n, int m) {
 			}
 		}
 	}
-  //free(queue);
+	//free(queue);
 	return -1;
 }
 
